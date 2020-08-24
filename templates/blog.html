@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+	<head>
+		<h1>Moondial: Cloud Blog<h1>
+	</head>
+	<br>
+	<body>
+		<h2>
+		<u><b>Landscaping to Cloudscaping</b></u>
+		</h2>
+		<br>
+		<p><h3>Hello, and welcome!</h3> You may be curious about the title. I am in the landscape business and am essentially transisioning to predominantly do dev/ops and cloud development work. Navigate to "about" above if you would like to know my story.
+		<br>
+		<br>
+		This is a very simple web app that I made with Google App Engine and flask. I'd like to give a brief general over view of the tools and different methods I used to develop this. Also, this is my first experience with html. On the up side, I can only see it getting better. The main focus of this post is the process.
+			<br>
+			<br>
+		<ul><b>Windows 10 OS -</b> Running on my lenovo laptop. My beloved work horse.</ul>
+		<ul><b>Sublime Text 3 -</b> To write code
+		</ul>
+		<ul><b>Git Bash terminal -</b> I use this to interact between github and my local code and machine.
+		</ul>
+	<ul><b>Git Hub -</b> Open source, great for version control and for sharing code with other developers</ul>
+<ul><b>Google Cloud Platform -</b> GCP is a great platform, the almighty cloud whos services are to be leveraged</ul>
+<ul><b>Google Cloud SDK -</b> A command line interface tool, such that once you get a hang of the gcloud syntax, it makes developing with Google Cloud Platform more efficient.</ul>
+I like using the  The GCP console (User Inerface) it's great, but for this project I only popped in to the console just to check up on a few things. I like being able to toggle back and forth.
+<br>
+Let's get started.
+<br>
+<br>
+<b>Sublime Text 3</b> has been great to work with so far. I have one or two more text editors on my radar that I will be trying out. For now Sublime is doing the trick just fine.
+<br>
+First step is to write the code, and to be sure your files are structured properly for the flask frame work. For instance, flask will specifically look for a folder "templates" and render the file specifed in that folder. That way when a user clicks the blog, contact, or about tab there is something there.
+<br>
+<br>
+<b>Below you can see the folder "</b>templates<b>" and files within, highlighted on the left.</b>
+<br>
+<br>
+<img src="{{url_for('static', filename='app.png')}}"  width="965" height="650" />
+<br>
+<br>
+Now that I have my code written and files organized. I then commit the code straight away to github. The next move is to access my local directory via the Google Cloud SDK. My working directory or the folder I will be working out of is "'Cloud SDK'". 
+<br>
+<br>
+<img src="{{url_for('static', filename='sdk.png')}}"  width="1500" height="130px" />
+<br>
+<br>
+Good, now I am going to clone the code I commited to github, into my current working directory by running the following command.
+<br>
+"git clone https://github/moondial-pal/lu_flask"
+<br>
+Clones from github.com/from my account/the reposotry you want to clone
+<br>
+<br>
+<img src="{{url_for('static', filename='sdkgitclone.png')}}"  width="1500" height="130px" />
+<br>
+<br>
+I like to confirm by scoping my directory simply with he dir command.
+"dir"
+<br>
+<br>
+<img src="{{url_for('static', filename='sdkwdir.png')}}"  width="1500" height="700px" />
+<br>
+<br>
+Now I am going to change directory into our cloned repo.
+"cd lu_flask"
+<br>
+<br>
+<img src="{{url_for('static', filename='.png')}}"  width="1500" height="700px" />
+<br>
+<br>
+There are two types of environments that the code can be ran in.
+<br> 
+Standard and Flexible.
+<br>
+For this very simple project, I am running the code in the standard environment. The way to specify the environment is stating it expicitly in the app.yaml file.
+<br>
+<br>
+<img src="{{url_for('static', filename='.png')}}"  width="1500" height="700px" />
+<br>
+<br>
+Ok, now to deploy the code to Google App Engine.
+"gcloud app deploy"
+<br>
+<br>
+<img src="{{url_for('static', filename='.png')}}"  width="1500" height="700px" />
+<br>
+<br>
+GCP will then spin up an instance, this will take a minute or two.
+<br>
+<br>
+<img src="{{url_for('static', filename='.png')}}"  width="1500" height="700px" />
+<br>
+<br>
+Now that the instance is up, I want to set it up with automatic scaling.
+As the service suggests, this will auto scale your instance, based on the ammount of traffic recieved or lack there of. This is great and efficient because with GCP you only pay for the services and resource that you use. Instead of subscribing to a plan with a set amount of services and resources.
+<br>
+<br>
+<img src="{{url_for('static', filename='.png')}}"  width="1500" height="700px" />
+<br>
+<br>
+Awesome now that I have auto scaling set up, I am going to have the traffic split. That means if the app reciece a lot of traffic multiple instances will be created and the the traffic will then be split between the instances. This is a form of load balancing, to avoid maxing out the resources in each instance.
+<br>
+<br>
+</p>
+</body>
+{% endblock %}
+© 2020 GitHub, Inc.
