@@ -61,7 +61,7 @@ That way when a user clicks the "blog", "contact", or "about" tab there is somet
 <h5><p style="text-align:center;"><b>Below you can see the folder "</b>templates<b>" and files within, highlighted on the left.</b></h5>
 <br>
 <br>
-<img src="{{url_for('static', filename='main.png')}}"  width="1500" height="700px" />
+<p style="text-align:center;"><img src="{{url_for('static', filename='main.png')}}"  width="1500" height="700px" />
 <br>
 <br>
 <h5><p style="text-align:center;">Google App Engine offers two types of environments that the code can be ran in.
@@ -74,7 +74,7 @@ For this very simple project, I am running the code in the standard environment.
 <b>Below is what my "standard environment" app.yaml looks like.</b></h5>
 <br>
 <br>
-<img src="{{url_for('static', filename='appyaml.png')}}"  width="1500" height="700px" />
+<p style="text-align:center;"><img src="{{url_for('static', filename='appyaml.png')}}"  width="1500" height="700px" />
 <br>
 <br>
 <h5><p style="text-align:center;">Google has great documentation. I was able to confirm how the yaml file is written for the App Engine standard environment.
@@ -87,26 +87,28 @@ Notice their comments marked by a hashtag.
 I'll also need to specify the version of flask required for the app in my "requirements.txt", also located in my working directory.</h5>
 <br>
 <br>
-<img src="{{url_for('static', filename='reqtxt.png')}}"  width="1500" height="700px" />
+<p style="text-align:center;"><img src="{{url_for('static', filename='reqtxt.png')}}"  width="1500" height="700px" />
 <br>
 <br>
 <h5><p style="text-align:center;">
 Now to open the Google Software Development Kit, aka the Google SDK.
 <br>
-If I was not using git hub to clone the repository, I would just access my local directory and place the files
-<br>
-(lu_blog folder) where I need it.
-<br>
 In this case my working directory or the folder
-<br> I will be working out of is "'Cloud SDK'". For me this is located here,
+<br> 
+I will be working out of is <b>"'Cloud SDK'"</b>. For me this is located here,
 <br>
 C:\Users\User\'Cloud SDK'</h5>
 <br>
 <br>
-<img src="{{url_for('static', filename='sdk.png')}}"  width="1500" height="150px" />
+<p style="text-align:center;"><img src="{{url_for('static', filename='sdk.png')}}"  width="1500" height="150px" />
 <br>
 <br>
-<h5><p style="text-align:center;">Good, now I have the code in my current working directory.</h5>
+<h5><p style="text-align:center;">Good, now I am going to clone the repository (lu_blog) from my git hub account into my working directory
+<br>
+using the <b>"git clone"</b> command, see below.</h5>
+<br>
+<br>
+<p style="text-align:center;"><img src="{{url_for('static', filename='clonelublog.png')}}"  width="1500" height="150px" />
 <br>
 <br>
 <h5><p style="text-align:center;">I like to confirm by scoping my directory simply with the dir command.
@@ -114,35 +116,37 @@ C:\Users\User\'Cloud SDK'</h5>
 <b>"dir"</b></h5>
 <br>
 <br>
-<img src="{{url_for('static', filename='sdkdirshow.png')}}"  width="1500" height="700px" />
+<p style="text-align:center;"><img src="{{url_for('static', filename='sdkdirshow.png')}}"  width="1500" height="700px" /><p style="text-align:center;">
 <br>
 <br>
 <h5><p style="text-align:center;">Now I am going to change directory into our cloned repo. I'll use the cd command,
 <br>
-"cd lu_blog"</h5>
+<b>"cd lu_blog"</b></h5>
 <br>
 <br>
-<img src="{{url_for('static', filename='cdlublog.png')}}"  width="1500" height="200px" />
+<p style="text-align:center;"><img src="{{url_for('static', filename='cdlublog.png')}}"  width="1500" height="200px" />
 <br>
 <br>
 <h5><p style="text-align:center;">Ok, now to deploy the code to Google App Engine.
 <br>
-"gcloud app deploy"</h5>
+<b>"gcloud app deploy"</b></h5>
 <br>
 <br>
-<img src="{{url_for('static', filename='apdeploy02.png')}}"  width="1500" height="100px" />
+<p style="text-align:center;"><img src="{{url_for('static', filename='apdeploy02.png')}}"  width="1500" height="100px" />
 <br>
 <br>
-<h5><p style="text-align:center;">GCP will then spin up an instance, this will take a minute or two. It may ask to confirm services to deploy. I'll type "Y" to continue.</h5>
+<h5><p style="text-align:center;">GCP will then spin up an instance, this will take a minute or two. It may ask to confirm services to deploy.
+<br> 
+I'll type <b>"Y"</b> to continue.</h5>
 <br>
 <br>
-<img src="{{url_for('static', filename='conser02.png')}}"  width="1500" height="300px" />
+<p style="text-align:center;"><img src="{{url_for('static', filename='conser02.png')}}"  width="1500" height="300px" />
 <br>
 <br>
 <h5><p style="text-align:center;">App engine will proceed to deploy the web app to the following address https://blog-test-02.wl.r.appspot.com</h5>
 <br>
 <br>
-<img src="{{url_for('static', filename='gapbro.png')}}"  width="1500" height="300px" />
+<p style="text-align:center;"><img src="{{url_for('static', filename='gapbro.png')}}"  width="1500" height="300px" />
 <br>
 <br>
 <h5><p style="text-align:center;"><p style="text-align:center;">Now I will type the following to use the app in a browser.
@@ -150,7 +154,7 @@ C:\Users\User\'Cloud SDK'</h5>
 <b>"gcloud app browse"</b></h5>
 <br>
 <br>
-<img src="{{url_for('static', filename='gapbro1.png')}}"  width="1500" height="75px" />
+<p style="text-align:center;"><img src="{{url_for('static', filename='gapbro1.png')}}"  width="1500" height="75px" />
 <br>
 <br>
 <h5><p style="text-align:center;">When you input that command, a browswer window will open up with the web app...The app is up and running and if you are reading
