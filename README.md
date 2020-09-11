@@ -1,1 +1,1 @@
-# lu_blog_yt
+# lu_blog
