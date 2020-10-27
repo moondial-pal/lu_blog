@@ -1,174 +1,361 @@
 {% extends 'base.html' %}
 {% block title %}Home{% endblock %}
 {% block content %}
-	<head>
-		
-	</head>
-	<br>
-	<body>
-		<h1><p style="text-align:center;"><u><b>Landscaping to Cloudscaping</b></u></h1>
-		<br>
-		<h2><p style="text-align:center;">Hello, and welcome!</h2> <h5><p style="text-align:center;">You may be curious about the title. I am in the landscape business and am essentially transitioning to 
-			<br>
-			predominantly dev/ops and cloud development work.
-			<br>
-			Navigate to "about" above if you would like to know my story.
-			<br>
-			<br>
-			This is a very simple web app that I made with Google App Engine and flask w/python. I'd like to give 
-			<br>
-			a brief, general over view of the tools and different methods I used to develop this.
-			<br>
-			Also, this is my first experience with markdown - its honestly embarrassing. On the up side, I can only 
-			<br>
-			see it getting better.
-			<br>
-			<br>
-			The main focus of this post is the process.
-			<br>
-			<br>
-			<b><h3><p style="text-align:center;">Tools I used to deploy this web app</h3></b>
-			<br>
-			<br>
-		<h5><ul><p style="text-align:center;"><b>Windows 10 OS -</b> Running on my lenovo laptop. My beloved work horse.</ul>
-		<ul><p style="text-align:center;"><b>Sublime Text 3 -</b> To write code.
-		</ul>
-		<ul><p style="text-align:center;"><b>Git Bash terminal -</b> I use this to interact between github and my local code and machine.
-		</ul>
-	<ul><p style="text-align:center;"><b>Git Hub -</b> Open source, great for version control and for sharing code with other developers</ul>
-<ul><p style="text-align:center;"><b>Google Cloud Platform -</b> GCP is a great platform, the almighty cloud whos services are to be leveraged.</ul>
-<ul><p style="text-align:center;"><b>Google Cloud SDK -</b> A command line interface tool, such that once you get a hang of the gcloud syntax, it makes
-<br>
-developing with Google Cloud Platform more efficient.</ul>
-<p style="text-align:center;">I like using the  The GCP console (User Inerface) it's great, but for this project I only popped in to the console just to check up on a few things.
-<br>
-<p style="text-align:center;">It is very convenient to be able to toggle back and forth.
-<br>
-Let's get started.
-<br>
-<br>
-<p style="text-align:center;">Sublime Text 3 has been great to work with so far. I have one or two more text editors on my radar that I will be trying out.
-<br>
-For now Sublime is doing the trick just fine.
-<br>
-<p style="text-align:center;">First step is to write the code, and to be sure your files are structured properly for the flask frame work.
-<br>
-For instance, flask will specifically look for a folder "templates" and render the file specifed in that folder.
-<br>
-That way when a user clicks the "blog", "contact", or "about" tab there is something there.</h5>
-<br>
-<br>
-<h5><p style="text-align:center;"><b>Below you can see the folder "</b>templates<b>" and files within, highlighted on the left.</b></h5>
-<br>
-<br>
-<p style="text-align:center;"><img src="{{url_for('static', filename='main.png')}}"  width="1500" height="700px" />
-<br>
-<br>
-<h5><p style="text-align:center;">Google App Engine offers two types of environments that the code can be ran in.
-<br>
-Standard and Flexible.
-<br>
-For this very simple project, I am running the code in the standard environment.
-<br>
-<br>
-<b>Below is what my "standard environment" app.yaml looks like.</b></h5>
-<br>
-<br>
-<p style="text-align:center;"><img src="{{url_for('static', filename='appyaml.png')}}"  width="1500" height="700px" />
-<br>
-<br>
-<h5><p style="text-align:center;">Google has great documentation. I was able to confirm how the yaml file is written for the App Engine standard environment.
-<br>
-They give you the rundown quite well.
-<br>
-Notice their comments marked by a hashtag.
-<br>
-<br>
-I'll also need to specify the version of flask required for the app in my "requirements.txt", also located in my working directory.</h5>
-<br>
-<br>
-<p style="text-align:center;"><img src="{{url_for('static', filename='reqtxt.png')}}"  width="1500" height="700px" />
-<br>
-<br>
-<h5><p style="text-align:center;">
-Now to open the Google Software Development Kit, aka the Google SDK.
-<br>
-In this case my working directory or the folder
-<br> 
-I will be working out of is <b>"'Cloud SDK'"</b>. For me this is located here,
-<br>
-C:\Users\User\'Cloud SDK'</h5>
-<br>
-<br>
-<p style="text-align:center;"><img src="{{url_for('static', filename='sdk.png')}}"  width="1500" height="150px" />
-<br>
-<br>
-<h5><p style="text-align:center;">Good, now I am going to clone the repository (lu_blog) from my git hub account into my working directory
-<br>
-using the <b>"git clone"</b> command, see below.</h5>
-<br>
-<br>
-<p style="text-align:center;"><img src="{{url_for('static', filename='clonelublog.png')}}"  width="1500" height="150px" />
-<br>
-<br>
-<h5><p style="text-align:center;">I like to confirm by scoping my directory simply with the dir command.
-<br>
-<b>"dir"</b></h5>
-<br>
-<br>
-<p style="text-align:center;"><img src="{{url_for('static', filename='sdkdirshow.png')}}"  width="1500" height="700px" /><p style="text-align:center;">
-<br>
-<br>
-<h5><p style="text-align:center;">Now I am going to change directory into our cloned repo. I'll use the cd command,
-<br>
-<b>"cd lu_blog"</b></h5>
-<br>
-<br>
-<p style="text-align:center;"><img src="{{url_for('static', filename='cdlublog.png')}}"  width="1500" height="200px" />
-<br>
-<br>
-<h5><p style="text-align:center;">Ok, now to deploy the code to Google App Engine.
-<br>
-<b>"gcloud app deploy"</b></h5>
-<br>
-<br>
-<p style="text-align:center;"><img src="{{url_for('static', filename='apdeploy02.png')}}"  width="1500" height="100px" />
-<br>
-<br>
-<h5><p style="text-align:center;">GCP will then spin up an instance, this will take a minute or two. It may ask to confirm services to deploy.
-<br> 
-I'll type <b>"Y"</b> to continue.</h5>
-<br>
-<br>
-<p style="text-align:center;"><img src="{{url_for('static', filename='conser02.png')}}"  width="1500" height="300px" />
-<br>
-<br>
-<h5><p style="text-align:center;">App engine will proceed to deploy the web app to the following address https://blog-test-02.wl.r.appspot.com</h5>
-<br>
-<br>
-<p style="text-align:center;"><img src="{{url_for('static', filename='gapbro.png')}}"  width="1500" height="300px" />
-<br>
-<br>
-<h5><p style="text-align:center;"><p style="text-align:center;">Now I will type the following to use the app in a browser.
-<br>
-<b>"gcloud app browse"</b></h5>
-<br>
-<br>
-<p style="text-align:center;"><img src="{{url_for('static', filename='gapbro1.png')}}"  width="1500" height="75px" />
-<br>
-<br>
-<h5><p style="text-align:center;">When you input that command, a browswer window will open up with the web app...The app is up and running and if you are reading
-<br>
-this post, you are looking at an updated version. So this service is super helpful if you want to focus more on the code than the infrastructure.
-<br>
-Google App Engine helps in a big way with that, by splitting traffic, autoscaling and facilitating different methods of deployment.</h5>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-</p>
+<head>
+</head>
+<br>
+<body>
+   <div class="header"
+         <p style="text-align:center;">That's Me</p>
+      </h2>
+   </div>
+   <hr>
+   <div class="card">
+      <br>
+      <br>
+      <h2>
+         <p style="text-align:center;">BASH Scripting: How I Became Hooked</p>
+      </h2>
+      <h5>
+         <p style="text-align:center;">#2 - Oct 4, 2020</p>
+      </h5>
+      <br>
+      <br>
+      <p style="text-align:center;"><img src="{{url_for('static', filename='bash.png')}}"  width="800" height="300px" />
+         <br>
+         <br>
+      <h5>
+         <p style="text-align:center;">Since I began learning about linux I have come to realize that I acutally really enjoy it.
+            <br>
+            I am constantly looking to discover new tools that could help me on my journey, linux or otherwise.
+            <br>
+            When I learned about bash scripting I was kind of shocked at how easy it was to pick up.
+            <br>
+            <br>
+            I must say it was helpful having learned a little python. Concepts such as
+            <br>
+            variables and functions were not super foreign to me =hit-ground-running.
+         </p>
+      </h5>
+      <br>
+      <br>
+      <p style="text-align:center;"><img src="{{url_for('static', filename='pwdsc.png')}}"  width="1500" height="150px" />
+         <br>
+         <br>
+      <h5>
+         <p style="text-align:center;">Above I ran the "<b>pwd</b>" command to show my working directory.
+            <br>
+            <br>
+            Being in the "/scripts" folder, I am going to create and edit a file with the "<b>vim sysup.sh</b>" command.
+            <br>
+            If you have never used vim, I suggest you read the docs or watch a turorial for the fundamental/basic commands.
+         </p>
+      </h5>
+      <br>
+      <p style="text-align:center;"><img src="{{url_for('static', filename='vimsys.png')}}"  width="1500" height="150px" />
+         <br>
+         <br>
+      <h5>
+         <p style="text-align:center;">Now to write the script.
+            <br>
+            Save and quit vim
+         </p>
+      </h5>
+      <br>
+      <br>
+      <p style="text-align:center;"><img src="{{url_for('static', filename='vimw.png')}}"  width="1500" height="250px" />
+         <br>
+         <br>
+      <h5>
+         <p style="text-align:center;">"<b>#!/bin/bash</b>" This is telling your system to use bash as your command interpeter.
+            <br>
+            <br>
+            "<b>sudo</b>" assigns you root privlages, needed to execute the next two commands.
+            <br>
+            <br>
+            "<b>apt-get update</b>" This will update the package list for the upgrades. It does not install anything.
+            <br>
+            <br>
+            "<b>sudo apt-get upgrade</b>" This will install the the updates and upgrade the packages.
+            <br>
+            <br>
+            "<b>echo</b>" Displays text. Echos string(s) to standard output, as stated in the manual.
+            <br>
+            <br>
+            Save and quit vim.
+            <br>
+            <br>
+            Next to use chmod to initialze the file to execute with "<b>chmod +x sysup.sh</b>"
+         </p>
+      </h5>
+      <br>
+      <p style="text-align:center;"><img src="{{url_for('static', filename='chmod.png')}}"  width="1500" height="150px" />
+         <br>
+         <br>
+      <h5>
+         <p style="text-align:center;">"<b>chmod</b>" changes the the mode of the file permissions. "<b>+x</b>" is adding it to execute.
+            <br>
+            Of course "<b>sysup.sh</b>" is the file containing the script.
+            <br>
+            <br>
+            Now run the script "<b>./sysup.sh</b>"
+         </p>
+      </h5>
+      <br>
+      <p style="text-align:center;"><img src="{{url_for('static', filename='xsys.png')}}"  width="1500" height="200px" />
+         <br>
+         <br>
+      <h5>
+         <p style="text-align:center;">The pre-fix on the file name "<b>./</b>" means current directory.</p>
+      </h5>
+      <br>
+      <p style="text-align:center;"><img src="{{url_for('static', filename='pasw.png')}}"  width="1500" height="200px" />
+         <br>
+         <br>
+      <h5>
+         <p style="text-align:center;">There are two sudo commands in the scripts, so the root pass will be requested.
+            <br>The pass is only asked for once. I like that, it is a good habit when executing root level commands.
+         </p>
+      </h5>
+      <br>
+      <p style="text-align:center;"><img src="{{url_for('static', filename='sysx.png')}}"  width="1500" height="500px" />
+         <br>
+         <br>
+      <h5>
+         <p style="text-align:center;">Since I ran this script recently I don't have any updates currently.
+            <br>
+            <br>
+            This was my very first bash script. It got me pretty psyched and I appreciate scripting in general because of it.
+         </p>
+      </h5>
+      <br>
+      <br>
+      </p>
+   </div>
+   <br>
+   <br>
+   <div class="card">
+      <br>
+      <br>
+      <h2>
+         <p style="text-align:center;">Cloudscaping to Landscaping</p>
+      </h2>
+      <h5>
+         <p style="text-align:center;">#1 - Sep 18, 2020</p>
+      </h5>
+      <br>
+      <br>
+      <h2>
+         <p style="text-align:center;">Hello, and welcome!
+      </h2>
+      <h5>
+      <p style="text-align:center;">
+         You may be curious about the title. I am in the landscape business and am essentially transitioning to
+         <br>
+         predominantly dev/ops and cloud development work.
+         <br>
+         Navigate to "about" above if you would like to know my story.
+         <br>
+         <br>
+         This is a very simple web app that I made with Google App Engine and flask w/python. I'd like to give
+         <br>
+         a brief, general over view of the tools and different methods I used to develop this.
+         <br>
+         Also, this is my first experience with markdown - its honestly embarrassing. On the up side, I can only
+         <br>
+         see it getting better.
+         <br>
+         <br>
+         The main focus of this post is the process.
+         <br>
+         <br>
+         <b>
+      <h3><p style="text-align:center;">Tools I used to deploy this web app</h3></b>
+      <br>
+      <br>
+      <h5>
+         <ul>
+            <p style="text-align:center;"><b>Windows 10 OS -</b> Running on my lenovo laptop. My beloved work horse.
+         </ul>
+         <ul>
+            <p style="text-align:center;"><b>Sublime Text 3 -</b> To write code.
+         </ul>
+         <ul>
+            <p style="text-align:center;"><b>Git Bash terminal -</b> I use this to interact between github and my local code and machine.
+         </ul>
+         <ul>
+            <p style="text-align:center;"><b>Git Hub -</b> Open source, great for version control and for sharing code with other developers
+         </ul>
+         <ul>
+            <p style="text-align:center;"><b>Google Cloud Platform -</b> GCP is a great platform, the almighty cloud whos services are to be leveraged.
+         </ul>
+         <ul>
+            <p style="text-align:center;"><b>Google Cloud SDK -</b> A command line interface tool, such that once you get a hang of the gcloud syntax, it makes
+               <br>
+               developing with Google Cloud Platform more efficient.
+         </ul>
+         <p style="text-align:center;">I like using the  The GCP console (User Inerface) it's great, but for this project I only popped in to the console just to check up on a few things.
+            <br>
+         <p style="text-align:center;">It is very convenient to be able to toggle back and forth.
+            <br>
+            Let's get started.
+            <br>
+            <br>
+         <p style="text-align:center;">Sublime Text 3 has been great to work with so far. I have one or two more text editors on my radar that I will be trying out.
+            <br>
+            For now Sublime is doing the trick just fine.
+            <br>
+         <p style="text-align:center;">First step is to write the code, and to be sure your files are structured properly for the flask frame work.
+            <br>
+            For instance, flask will specifically look for a folder "templates" and render the file specifed in that folder.
+            <br>
+            That way when a user clicks the "blog", "contact", or "about" tab there is something there.
+      </h5>
+      <br>
+      <br>
+      <h5>
+         <p style="text-align:center;"><b>Below you can see the folder "</b>templates<b>" and files within, highlighted on the left.</b>
+      </h5>
+      <br>
+      <br>
+      <p style="text-align:center;"><img src="{{url_for('static', filename='main.png')}}"  width="1500" height="700px" />
+         <br>
+         <br>
+      <h5>
+         <p style="text-align:center;">Google App Engine offers two types of environments that the code can be ran in.
+            <br>
+            Standard and Flexible.
+            <br>
+            For this very simple project, I am running the code in the standard environment.
+            <br>
+            <br>
+            <b>Below is what my "standard environment" app.yaml looks like.</b>
+      </h5>
+      <br>
+      <br>
+      <p style="text-align:center;"><img src="{{url_for('static', filename='appyaml.png')}}"  width="1500" height="700px" />
+         <br>
+         <br>
+      <h5>
+         <p style="text-align:center;">Google has great documentation. I was able to confirm how the yaml file is written for the App Engine standard environment.
+            <br>
+            They give you the rundown quite well.
+            <br>
+            Notice their comments marked by a hashtag.
+            <br>
+            <br>
+            I'll also need to specify the version of flask required for the app in my "requirements.txt", also located in my working directory.
+      </h5>
+      <br>
+      <br>
+      <p style="text-align:center;"><img src="{{url_for('static', filename='reqtxt.png')}}"  width="1500" height="700px" />
+         <br>
+         <br>
+      <h5>
+         <p style="text-align:center;">
+            Now to open the Google Software Development Kit, aka the Google SDK.
+            <br>
+            In this case my working directory or the folder
+            <br>
+            I will be working out of is <b>"'Cloud SDK'"</b>. For me this is located here,
+            <br>
+            C:\Users\User\'Cloud SDK'
+      </h5>
+      <br>
+      <br>
+      <p style="text-align:center;"><img src="{{url_for('static', filename='sdk.png')}}"  width="1500" height="150px" />
+         <br>
+         <br>
+      <h5>
+         <p style="text-align:center;">Good, now I am going to clone the repository (lu_blog) from my git hub account into my working directory
+            <br>
+            using the <b>"git clone"</b> command, see below.
+      </h5>
+      <br>
+      <br>
+      <p style="text-align:center;"><img src="{{url_for('static', filename='clonelublog.png')}}"  width="1500" height="150px" />
+         <br>
+         <br>
+      <h5>
+         <p style="text-align:center;">I like to confirm by scoping my directory simply with the dir command.
+            <br>
+            <b>"dir"</b>
+      </h5>
+      <br>
+      <br>
+      <p style="text-align:center;"><img src="{{url_for('static', filename='sdkdirshow.png')}}"  width="1500" height="700px" />
+      <p style="text-align:center;">
+         <br>
+         <br>
+      <h5>
+         <p style="text-align:center;">Now I am going to change directory into our cloned repo. I'll use the cd command,
+            <br>
+            <b>"cd lu_blog"</b>
+      </h5>
+      <br>
+      <br>
+      <p style="text-align:center;"><img src="{{url_for('static', filename='cdlublog.png')}}"  width="1500" height="200px" />
+         <br>
+         <br>
+      <h5>
+         <p style="text-align:center;">Ok, now to deploy the code to Google App Engine.
+            <br>
+            <b>"gcloud app deploy"</b>
+      </h5>
+      <br>
+      <br>
+      <p style="text-align:center;"><img src="{{url_for('static', filename='apdeploy02.png')}}"  width="1500" height="100px" />
+         <br>
+         <br>
+      <h5>
+         <p style="text-align:center;">GCP will then spin up an instance, this will take a minute or two. It may ask to confirm services to deploy.
+            <br>
+            I'll type <b>"Y"</b> to continue.
+      </h5>
+      <br>
+      <br>
+      <p style="text-align:center;"><img src="{{url_for('static', filename='conser02.png')}}"  width="1500" height="300px" />
+         <br>
+         <br>
+      <h5>
+         <p style="text-align:center;">App engine will proceed to deploy the web app to the following address https://blog-test-02.wl.r.appspot.com
+      </h5>
+      <br>
+      <br>
+      <p style="text-align:center;"><img src="{{url_for('static', filename='gapbro.png')}}"  width="1500" height="300px" />
+         <br>
+         <br>
+      <h5>
+         <p style="text-align:center;">
+         <p style="text-align:center;">Now I will type the following to use the app in a browser.
+            <br>
+            <b>"gcloud app browse"</b>
+      </h5>
+      <br>
+      <br>
+      <p style="text-align:center;"><img src="{{url_for('static', filename='gapbro1.png')}}"  width="1500" height="75px" />
+         <br>
+         <br>
+      <h5>
+         <p style="text-align:center;">When you input that command, a browswer window will open up with the web app...The app is up and running and if you are reading
+            <br>
+            this post, you are looking at an updated version. So this service is super helpful if you want to focus more on the code than the infrastructure.
+            <br>
+            Google App Engine helps in a big way with that, by splitting traffic, autoscaling and facilitating different methods of deployment.
+            <br>
+            <br>
+            Below is a semi-emberrassing video on the content above.
+            <br>
+            <br>
+            <iframe width="420" height="315"
+            src="https://youtube.com/embed/pWHaAMOV-uA"
+            </iframe>
+         </p>
+      </h5>
+      <br>
+      <br>
+      <br>
+      <br>
+   </div>
 </body>
 {% endblock %}
-© 2020 GitHub, Inc.
